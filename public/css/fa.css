@@ -1,0 +1,313 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F2F0F3;
+}
+
+.main-fa {
+    background-color: #f2f0f3;
+    min-height: 100vh;
+    padding: 100px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.wrapper-fa {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.btn-voltar {
+    display: inline-block;
+    background: none;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 14px; 
+    transition: background 0.2s ease;
+}
+
+.btn-voltar:hover{
+    background-color: #f77ec9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-voltar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 0px #000000;
+}
+
+.card-fa {
+    background-color: #eadcc4;
+    border: 1px solid #000000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 2px 0px #000000;
+}
+
+
+.card-fa-topo h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.card-fa-topo-rosa {
+    background-color: #ff9ee2;
+    padding: 15px 25px;
+    border-bottom: 2px solid #000000;
+}
+
+.card-fa-conteudo {
+    padding: 25px 30px 40px 30px;
+}
+
+.subtitulo-fa {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #533e1c;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtitulo-fa i {
+    color: #ff9fff;
+}
+
+.grid-fa {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px
+}
+
+.item-fa {
+    background-color: #f3edf2;
+    border: 1px solid #bda5cc;
+    border-radius: 12px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    gap: 15px;
+    transition: all 0.2s ease;
+}
+
+.item-fa:hover {
+    background-color: #ffffff;
+    border-color: #9b72c8;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(155, 114, 200, 0.15);
+}
+
+.icon-wrapper-fa {
+    font-size: 2.2rem;
+    color: #2e1b5b;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.item-fa:nth-child(4) .icon-wrapper-fa {
+    color: #e2b226;
+}
+
+.item-fa:nth-child(5) .icon-wrapper-fa {
+    color: #cc2b2b;
+}
+
+.item-fa span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.75rem;
+    color: #000000;
+    line-height: 1.3;
+}
+
+.taco-fundo-fa {
+    position: relative;
+    left: calc(50% - 560px);
+    top: 50%;
+    transform: translateY(-50%) rotate(-5deg);
+    width: 390px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.decoracao-fa {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brilho-fa-1 { top: 10%; left: calc(50% - 400px); width: 60px; opacity: 0.6; }
+.brilho-fa-2 { bottom: 15%; left: calc(50% - 510px); width: 80px; opacity: 0.7; }
+.coracao-fa { top: 55%; right: calc(50% - 480px); width: 45px; transform: rotate(15deg); }
+.nuvem-fa { bottom: -20px; right: calc(50% - 520px); width: 180px; opacity: 0.8; }
+
+@media (max-width: 820px) {
+    .grid-fa {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .taco-fundo-fa {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-fa {
+        grid-template-columns: 1fr;
+    }
+    .taco-fundo-fa {
+        padding: 20px 15px;
+    }
+}
+
+
+/*POP-UPS*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.ativo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-overlay.ativo .modal-wrapper {
+    transform: scale(1);
+}
+
+
+.modal-wrapper {
+    background-color: #eadcc4; /* Bege idêntico ao card original */
+    width: 100%;
+    max-width: 650px;
+    border: 2px solid #000000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    margin: 20px;
+}
+
+
+
+
+.modal-header {
+    background-color: #ff9ee2; /* Rosa do tema */
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #000000;
+}
+
+.modal-header h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #000000;
+    margin: 0;
+}
+
+/* Botão Fechar (X) */
+.btn-fechar {
+    background: none;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #000000;
+    transition: transform 0.2s ease;
+}
+
+.btn-fechar:hover {
+    transform: scale(1.2);
+}
+
+/* Corpo do texto dentro do Pop-up */
+.modal-body {
+    padding: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-height: 70vh;
+    overflow-y: auto; 
+    scrollbar-width: none; /* Oculta no Firefox */
+    -ms-overflow-style: none; /* Oculta no IE e Edge antigo */
+}
+
+.modal-body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Bloqueia a rolagem da página de fundo */
+body.modal-aberto {
+    overflow: hidden;
+}
+
+/* Estilização para listas ou tópicos que colocar dentro do pop-up */
+.modal-body h3 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.modal-body ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.modal-body li {
+    margin-bottom: 5px;
+}
